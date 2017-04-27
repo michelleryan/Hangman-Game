@@ -1,0 +1,52 @@
+/*media objects*/
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) 
+@media (min-width: @screen-sm-min) { ... }
+
+/* Medium devices (desktops, 992px and up) 
+@media (min-width: @screen-md-min) { ... }
+
+/* Large devices (large desktops, 1200px and up) 
+@media (min-width: @screen-lg-min) { ... }*/
+
+.img-responsive {
+	width: 100%;
+	height: 150px;
+	margin-top: 20px;
+}
+.score{
+	text-align: center;
+	padding: 5px;
+	margin-bottom: 20px;
+	background-color: #ffff66;
+
+}
+
+.main-content{
+	border-style: dotted;
+	border-color: blue;
+	padding: 5px;
+}
+
+.game {
+	text-align: center;
+	border-left: dotted;
+	border-color: blue;
+}
+
+#movie-facts{
+	font-family: "Georgia", "Times New Roman";
+	font-size: 14px;
+	font-style: italic;
+}
+
+.well {
+	width: 100%;
+	text-align: center;
+	color:black;
+	border-top-style: solid;
+	border-top-width:1px;
+	margin-bottom: 0px;
+}

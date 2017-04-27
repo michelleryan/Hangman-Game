@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman-Game</title>
+	<!--make my game mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- link in bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<img src="assets/images/hangmantitle.png" class="img-responsive" alt="HangMan Title">
+			</div>
+
+		</div>
+		<div class="row ">
+			<div class="col-md-12">
+				<div class="score">
+					<h3>Wins:<span class="label label-success wins">#</span></h3>
+					<h3>Losses:<span class="label label-danger losses">#</span></h3>
+				</div>
+			</div>
+		</div>
+		<div class="row main-content">
+			<div class="col-lg-6">
+				<div class="row">
+					<div class="media-left sci-fi-pic">
+						<img src="assets/images/sci-fi-movies.jpg" class="media-object" alt="Sci-Fi">
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">Movie Facts<h4>
+						<p id="movie-facts">This is where my movie facts will go</p>
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-lg-6 game">
+				<div class="row instructions">
+					<h2>Press Any Key to Get Started!</h2>
+				</div>
+				<div class="row">
+					<h3>Current Word</h3>
+					<div class="letter-space">word goes here</div>
+					<h3>Number of Guesses Remaining<br><span class="label label-primary remaining">#</span></h3>
+					<h3>Letters Already Guessed</h3>
+					<div id="letters-guessed">Guessed Letters go here</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="well">
+					&copy; Copyright 2017 Michelle Ryan, HangMan Game
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		//create sci-fi movies array for computer to choose a word
+		//create letters array for user to choose letters
+		//create movies Object: sci-fi movie:movie facts for display in .sci-fi-pic:#movie-facts
+		//create count variable to keep track of # of guesses: remainingCount = 15
+		//on click event to start
+		//Computer to choose a word from sci-fi movies array, set currentWord var, display '_' for each character in the word
+		//Create a for loop with remainingCount starting at 15 going to 0
+		//Within the for loop
+		//1. create on key up event to listen for letter pressed, store in letterChoice array
+		//2. function letterGuess: check in letterChoice array if already chosen, if new then update remaining count
+		//3. function letterMatch: check if the letterGuess matches any letters in the currentWord, if yes - increment match and display at correct letter position
+		//4. function guessedDisplay: update #letters-guessed display with letterGuess text
+
+		//create a condition so when match count = currentWord.length 
+		//1.function wordMatch: get letters displayed, concatenate and compare string to currentWord, if true then increment .wins and return wordMatch, if false and remainingCount!=0 then go back to onKeyUp event
+		//6. function movieUpdate: wordMatch=true -- get corresponding movieImg and movieFact from movies Object and update display
+
+	</script>
+</body>
+</html>
