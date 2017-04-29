@@ -74,25 +74,26 @@ document.onkeyup = function(event) {
 				document.getElementById("letters-guessed").innerHTML=letterChoice;
 				document.getElementById("remaining").innerHTML = remainingCount;
 
-				//check for letter in currentWord
-				var indices = [];
+//Update "Letters Guessed" display: check if the letterGuess matches any letters in the currentWord, if yes - increment match and display at correct letter position
+	//array to hold the indexes of the letter matched as it could be at multiple positions within the currentWord 
+								
+				var indices = [];  
 				for(x=0; x<currentWord.length; x++) {
 					if (keyPressed==currentWord.charAt(x)) {
-						//console.log(currentWord.indexOf(keyPressed));
-						indices.push(x);
+						indices.push(x);  //add index position(s) for letter match
 					}
 				} 
 				console.log(indices);
-				//replace the '__' with the matching letter
 				
+	//for each index position of the specific letter match, Update array that holds "__" for the currentWord with the matching letter when guessed by user
 				if (indices.length>0) {
 					for(y=0; y<indices.length; y++) {
-					dashes.splice(indices[y], 1, keyPressed)
+					dashes.splice(indices[y], 1, keyPressed)  //replace the '__' with the matching letter
 					match++;
 					}
 					document.getElementById("letter-space").innerHTML = dashes.join('').toUpperCase();
 
-					//check for word match
+					//check for word match and increment # of wins if it is a match
 					if((match == currentWord.length) && remainingCount!=0) {
 						wins++;
 						document.getElementById("wins").innerHTML = wins;
@@ -101,14 +102,3 @@ document.onkeyup = function(event) {
 			}
 	    }
 
-
-		
-//Create a for loop with remainingCount starting at 15 going to 0
-//Within the for loop
-//
-//3. function letterMatch: check if the letterGuess matches any letters in the currentWord, if yes - increment match and display at correct letter position
-//4. function guessedDisplay: update #letters-guessed display with letterGuess text
-
-//create a condition so when match count = currentWord.length 
-//1.function wordMatch: get letters displayed, concatenate and compare string to currentWord, if true then increment .wins and return wordMatch, if false and remainingCount!=0 then go back to onKeyUp event
-//2. function movieUpdate: wordMatch=true -- get corresponding movieImg and movieFact from movies Object and update display
